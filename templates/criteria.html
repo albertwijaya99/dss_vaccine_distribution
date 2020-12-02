@@ -16,7 +16,7 @@
 
 <body style="background-color: #202124">
    <div class="container" style="margin-top: 5%">
-      <form action="{{ url_for(result) }}" method="POST">
+      <form action="{{ url_for('result') }}" method="POST">
          <input name="people" type="hidden" , value="{{result}}" required/>
          {% for i in range(result) %}
          <div style="border: 1px solid cornflowerblue; border-radius: 25px; padding: 1%;">
