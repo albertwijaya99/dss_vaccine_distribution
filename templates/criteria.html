@@ -1,0 +1,74 @@
+<html>
+
+<head>
+   <!-- CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+
+   <!-- jQuery and JS bundle w/ Popper.js -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: #202124">
+   <div class="container" style="margin-top: 5%">
+      <form action="http://localhost:5000/result" method="POST">
+         <input name="people" type="hidden" , value="{{result}}" required/>
+         {% for i in range(result) %}
+         <div style="border: 1px solid cornflowerblue; border-radius: 25px; padding: 1%;">
+            <h4 style="color: cornflowerblue; text-align: center;">Orang {{i + 1}}</h4>
+            <div class="form-group">
+               <label for="nama{{i}}" style="color: cornflowerblue">Nama</label>
+               <input type="text" class="form-control" name="nama{{i}}" placeholder="Masukkan Nama" required/>
+            </div>
+            <div class="form-group">
+               <label for="profesi{{i}}" style="color: cornflowerblue">Profesi</label>
+               <select name="profesi{{i}}" class="form-control" required>
+                  <option value="3">Health Care Worker</option>
+                  <option value="2">Essential Worker</option>
+                  <option value="1">Non Esential Worker</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="umur{{i}}" style="color: cornflowerblue">Umur</label>
+               <select name="umur{{i}}" class="form-control" required>
+                  <option value="3">Lansia (45+)</option>
+                  <option value="4">Dewasa (26 - 45)</option>
+                  <option value="2">Remaja (12 - 25)</option>
+                  <option value="1">Anak-anak (0 - 11)</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="health{{i}}" style="color: cornflowerblue">Riwayat Kesehatan</label>
+               <select name="health{{i}}" class="form-control" required>
+                  <option value="3">Penyakit fatal jika terkena COVID 19</option>
+                  <option value="2">
+                     Penyakit tidak fatal jika terkena COVID 19
+                  </option>
+                  <option value="1">Sehat</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="zone{{i}}" style="color: cornflowerblue">Zona Tempat Tinggal</label>
+               <select name="zone{{i}}" class="form-control" required>
+                  <option value="4">Zona Hitam</option>
+                  <option value="3">Zona Merah</option>
+                  <option value="2">Zona Kuning</option>
+                  <option value="1">Zona Hijau</option>
+               </select>
+            </div>
+         </div>
+         <br />
+         {% endfor %}
+         <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+         </div>
+      </form>
+   </div>
+</body>
+
+</html>
