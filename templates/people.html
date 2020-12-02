@@ -17,7 +17,7 @@
 
 <body style="background-color: #202124;">
     <div class="container" style="margin-top: 15%;">
-        <form action="http://localhost:5000/criteria" method="POST">
+        <form action="{{ url_for(criteria) }}" method="POST">
             <div class="form-group">
                 <label for="people" id="people" style="color:cornflowerblue">
                     <h4>Masukkan jumlah orang yang akan di bandingkan.</h4>
